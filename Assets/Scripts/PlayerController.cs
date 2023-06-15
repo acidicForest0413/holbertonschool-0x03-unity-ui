@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePickup(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
             score++;
