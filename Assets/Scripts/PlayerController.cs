@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public int health;
+    public float speed = 5;
+    public int health = 5;
     private int score;
     [SerializeField] Rigidbody rb;
     [SerializeField] int StartHealth = 5;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
+        //Debug.Log("Input: " + dir);
         dir = dir.normalized * speed;
     }
 
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePickup(Collider other)
     {
-        if (other.gameObject.CompareTag("Pickup"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             other.gameObject.SetActive(false);
             score++;
