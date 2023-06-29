@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             SetHealthText();
             if(health <= 0)
             {
-                Debug.Log("Game Over!");
+                //Debug.Log("Game Over!");
                 UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
                 WinText.color = Color.white;
                 WinText.text = "Game Over";
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Goal"))
             return;
-        Debug.Log("You win!");
+        //Debug.Log("You win!");
         WinText.color = Color.black;
         WinText.text = "You Win!";
         WinLoseBG.color = Color.green;
