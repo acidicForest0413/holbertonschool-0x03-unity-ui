@@ -5479,12 +5479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fd6cef5370dd545b26ac59818f4553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   health: 5
-  scoreText: {fileID: 0}
-  healthText: {fileID: 0}
-  WinText: {fileID: 0}
-  WinLoseBG: {fileID: 0}
+  scoreText: {fileID: 1448593476}
+  healthText: {fileID: 1045131559}
+  WinText: {fileID: 2128469719}
+  WinLoseBG: {fileID: 803531407}
   rb: {fileID: 0}
   StartHealth: 5
 --- !u!1 &1409268687

@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Game Over!");
                 UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                WinText.color = Color.white;
+                WinText.text = "Game Over";
+                WinLoseBG.color = Color.red;
+                WinLoseBG.gameObject.SetActive(true);
                 return;
             }
         }
@@ -80,6 +84,10 @@ public class PlayerController : MonoBehaviour
         if (!other.gameObject.CompareTag("Goal"))
             return;
         Debug.Log("You win!");
+        WinText.color = Color.black;
+        WinText.text = "You Win!";
+        WinLoseBG.color = Color.green;
+        WinLoseBG.gameObject.SetActive(true);
     }
 
     void SetScoreText()
@@ -98,7 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Health: " + health);
         }
-        
+        healthText.text = $"Health: {health}";
     }
 
     void ShowWinScreen()
