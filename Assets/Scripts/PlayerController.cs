@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (scoreText == null)
         {
-            Debug.Log("Score: " + score);
+            //Debug.Log("Score: " + score);
             return;
         }
         scoreText.text = $"Score: {score}";
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         if(healthText == null)
         {
-            Debug.Log("Health: " + health);
+            //Debug.Log("Health: " + health);
         }
         
     }
