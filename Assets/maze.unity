@@ -5487,6 +5487,7 @@ MonoBehaviour:
   WinLoseBG: {fileID: 803531407}
   rb: {fileID: 0}
   StartHealth: 5
+  respawnDelay: 3
 --- !u!1 &1409268687
 GameObject:
   m_ObjectHideFlags: 0
