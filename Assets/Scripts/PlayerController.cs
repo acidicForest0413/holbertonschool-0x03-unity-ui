@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private int score;
     [SerializeField] Rigidbody rb;
     [SerializeField] int StartHealth = 5;
+    [SerializeField] private float respawnDelay = 3;
     Vector3 dir = Vector3.zero;
 
     // Start is called before the first frame update
@@ -69,11 +70,13 @@ public class PlayerController : MonoBehaviour
             if(health <= 0)
             {
                 //Debug.Log("Game Over!");
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                
                 WinText.color = Color.white;
                 WinText.text = "Game Over";
                 WinLoseBG.color = Color.red;
                 WinLoseBG.gameObject.SetActive(true);
+                StartCoroutine(LoadScene(respawnDelay));
+                //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
                 return;
             }
         }
@@ -88,6 +91,7 @@ public class PlayerController : MonoBehaviour
         WinText.text = "You Win!";
         WinLoseBG.color = Color.green;
         WinLoseBG.gameObject.SetActive(true);
+        StartCoroutine(routine: LoadScene(respawnDelay));
     }
 
     void SetScoreText()
@@ -130,7 +134,9 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator LoadScene(float seconds)
     {
+        Debug.Log("Seconds: " + seconds);
         yield return new WaitForSeconds(seconds);
+        Debug.Log("Ready to transition scenes");
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
