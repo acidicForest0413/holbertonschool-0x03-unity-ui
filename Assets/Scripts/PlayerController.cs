@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
         dir = dir.normalized * speed;
